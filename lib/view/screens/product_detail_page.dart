@@ -32,6 +32,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           ),
         ),
         centerTitle: true,
+        backgroundColor: const Color(0xeffafafa),
         actions: [
           const Icon(Icons.favorite_border_outlined),
           SizedBox(
@@ -167,7 +168,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     ),
                     Text(
                       data['description'],
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color(0xff7A7A7A),
                       ),
                     ),
@@ -176,16 +177,16 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     ),
                     ActionChip(
                       avatar: (isLike == true)
-                          ? Icon(
+                          ? const Icon(
                               Icons.favorite,
                               color: Colors.red,
                             )
-                          : Icon(Icons.favorite_border),
+                          : const Icon(Icons.favorite_border),
                       backgroundColor: Colors.yellow,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(h * 0.008),
                       ),
-                      label: (isLike) ? Text("Like") : Text("UnLike"),
+                      label: (isLike) ? const Text("Like") : const Text("UnLike"),
                       onPressed: () {
                         setState(() {
                           // (isLike==false)
@@ -203,7 +204,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   if (!addToCart.contains(data)) {
                     addToCart.add(data);
                   }
-
                   log(" ------ Add To Cart ------");
                   log("${addToCart}");
                   log("${addToCart.length}");
@@ -216,7 +216,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       color: Color(0xffAA14F0),
                       borderRadius: BorderRadius.circular(h * 0.035)),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     "ADD TO CART",
                     style: TextStyle(
                       color: Colors.white,
@@ -230,6 +230,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           ),
         ),
       ),
+      backgroundColor: const Color(0xeffafafa),
     );
   }
 }

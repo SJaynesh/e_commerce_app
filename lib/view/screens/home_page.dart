@@ -24,9 +24,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    Category.insert(0, "All");
-    log("$AllCategory");
-    log("$Category");
+    if (!Category.contains("All")) {
+      Category.insert(0, "All");
+      log("$AllCategory");
+      log("$Category");
+    }
   }
 
   @override
@@ -48,16 +50,18 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         actions: [
-          CircleAvatar(
-            backgroundColor: iconActionColor,
-            foregroundImage: AssetImage(iconAction),
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(GlobalRoutes.cart_page);
+            },
+            icon: Icon(Icons.shopping_cart),
           ),
           SizedBox(
             width: w * 0.025,
           ),
         ],
         elevation: 0,
-        backgroundColor: Color(0xede3dfdf),
+        backgroundColor: const Color(0xeffafafa),
       ),
       body: Padding(
         padding: const EdgeInsets.all(18),
@@ -210,8 +214,9 @@ class _HomePageState extends State<HomePage> {
                       (e) => (cat == e['category'])
                           ? GestureDetector(
                               onTap: () {
-                                Navigator.of(context)
-                                    .pushNamed(GlobalRoutes.detail_page,arguments: e);
+                                Navigator.of(context).pushNamed(
+                                    GlobalRoutes.detail_page,
+                                    arguments: e);
                               },
                               child: Container(
                                 height: h * 0.43,
@@ -241,7 +246,6 @@ class _HomePageState extends State<HomePage> {
                                       height: h * 0.18,
                                       width: w,
                                       decoration: BoxDecoration(
-                                        color: Colors.yellow,
                                         borderRadius: BorderRadius.circular(12),
                                         image: DecorationImage(
                                             image: NetworkImage(e['thumbnail']),
@@ -287,8 +291,9 @@ class _HomePageState extends State<HomePage> {
                           : (cat == "All")
                               ? GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context)
-                                        .pushNamed(GlobalRoutes.detail_page,arguments: e);
+                                    Navigator.of(context).pushNamed(
+                                        GlobalRoutes.detail_page,
+                                        arguments: e);
                                   },
                                   child: Container(
                                     height: h * 0.43,
@@ -320,7 +325,6 @@ class _HomePageState extends State<HomePage> {
                                           height: h * 0.18,
                                           width: w,
                                           decoration: BoxDecoration(
-                                            color: Colors.yellow,
                                             borderRadius:
                                                 BorderRadius.circular(12),
                                             image: DecorationImage(
@@ -553,7 +557,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      backgroundColor: Color(0xede3dfdf),
+      backgroundColor: const Color(0xeffafafa),
     );
   }
 }
