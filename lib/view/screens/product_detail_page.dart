@@ -186,7 +186,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(h * 0.008),
                       ),
-                      label: (isLike) ? const Text("Like") : const Text("UnLike"),
+                      label:
+                          (isLike) ? const Text("Like") : const Text("UnLike"),
                       onPressed: () {
                         setState(() {
                           // (isLike==false)
@@ -199,29 +200,34 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   ],
                 ),
               ),
-              GestureDetector(
-                onTap: () {
-                  if (!addToCart.contains(data)) {
-                    addToCart.add(data);
-                  }
-                  log(" ------ Add To Cart ------");
-                  log("${addToCart}");
-                  log("${addToCart.length}");
-                  log("---------------------------");
-                },
-                child: Container(
-                  height: h * 0.06,
-                  width: w,
-                  decoration: BoxDecoration(
-                      color: Color(0xffAA14F0),
-                      borderRadius: BorderRadius.circular(h * 0.035)),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    "ADD TO CART",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1,
+              Ink(
+                decoration: BoxDecoration(
+                  color: const Color(0xffAA14F0),
+                  borderRadius: BorderRadius.circular(h * 0.035),
+                ),
+                child: InkWell(
+                  splashColor: Colors.grey.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(h * 0.035),
+                  onTap: () {
+                    if (!addToCart.contains(data)) {
+                      addToCart.add(data);
+                    }
+                    log(" ------ Add To Cart ------");
+                    log("${addToCart}");
+                    log("${addToCart.length}");
+                    log("---------------------------");
+                  },
+                  child: Container(
+                    height: h * 0.06,
+                    width: w,
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "ADD TO CART",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1,
+                      ),
                     ),
                   ),
                 ),

@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.of(context).pushNamed(GlobalRoutes.cart_page);
             },
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
           ),
           SizedBox(
             width: w * 0.025,
