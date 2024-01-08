@@ -1,4 +1,3 @@
-
 import 'package:e_commerce/utills/routes.dart';
 import 'package:e_commerce/view/screens/cart_page.dart';
 import 'package:e_commerce/view/screens/home_page.dart';
@@ -19,9 +18,9 @@ class E_CommerceApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        GlobalRoutes.home_page : (context) => const HomePage(),
-        GlobalRoutes.detail_page : (context) => const ProductDetailPage(),
-        GlobalRoutes.cart_page : (context) => const CartPage(),
+        GlobalRoutes.home_page: (context) => const HomePage(),
+        GlobalRoutes.detail_page: (context) => const ProductDetailPage(),
+        GlobalRoutes.cart_page: (context) => const CartPage(),
       },
     );
   }

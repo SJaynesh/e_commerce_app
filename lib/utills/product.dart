@@ -612,4 +612,6 @@ List AllCategory = Product.map((e) => e['category']).toList();
 
 List Category = AllCategory.toSet().toList();
 
-List addToCart = [];
+List likedProducts = [];
+
+List<Map<String, dynamic>> addToCart = [];

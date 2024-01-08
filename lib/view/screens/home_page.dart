@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
+    super.initState();
     if (!Category.contains("All")) {
       Category.insert(0, "All");
       log("$AllCategory");
@@ -257,6 +258,8 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     Text(
                                       e['title'],
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                         fontSize: h * 0.023,
                                         fontWeight: FontWeight.w500,

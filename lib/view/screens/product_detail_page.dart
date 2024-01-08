@@ -176,7 +176,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       height: h * 0.025,
                     ),
                     ActionChip(
-                      avatar: (isLike == true)
+                      avatar: (likedProducts.contains(Product.indexOf(data)))
                           ? const Icon(
                               Icons.favorite,
                               color: Colors.red,
@@ -186,15 +186,16 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(h * 0.008),
                       ),
-                      label:
-                          (isLike) ? const Text("Like") : const Text("UnLike"),
+                      label: (!likedProducts.contains(Product.indexOf(data)))
+                          ? const Text("Like")
+                          : const Text("UnLike"),
                       onPressed: () {
-                        setState(() {
-                          // (isLike==false)
-                          //     ? isLike = true
-                          //     : isLike =  false;
-                          isLike = !isLike;
-                        });
+                        int index = Product.indexOf(data);
+
+                        likedProducts.contains(index)
+                            ? likedProducts.remove(index)
+                            : likedProducts.add(index);
+                        setState(() {});
                       },
                     ),
                   ],
