@@ -6,7 +6,7 @@ String homePageTitleText1 = "Find The";
 String homePageTitleText2 = "Best";
 String homePageTitleText3 = "Food";
 String homePageTitleText4 = "Around You";
-String homePageSearchBarText = "Search your favourit Food";
+String homePageSearchBarText = "Search your favourit Products";
 
 // Images
 String imagePath = "assets/images/home_page/";
