@@ -191,10 +191,13 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           : const Text("UnLike"),
                       onPressed: () {
                         int index = Product.indexOf(data);
+                        log("$index");
 
                         likedProducts.contains(index)
                             ? likedProducts.remove(index)
                             : likedProducts.add(index);
+
+                        log("${likedProducts}");
                         setState(() {});
                       },
                     ),

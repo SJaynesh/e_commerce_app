@@ -87,7 +87,12 @@ class _CartPageState extends State<CartPage> {
                                       SlidableAction(
                                         borderRadius: BorderRadius.circular(20),
                                         icon: Icons.delete,
-                                        onPressed: (context) {},
+                                        foregroundColor: Colors.red,
+                                        onPressed: (context) {
+                                          setState(() {
+                                            addToCart.remove(e);
+                                          });
+                                        },
                                       ),
                                       // GestureDetector(
                                       //   onTap: () {
