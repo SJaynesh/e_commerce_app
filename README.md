@@ -137,6 +137,9 @@ Flutter concepts.
 
 ### Video:
 
+https://github.com/SJaynesh/e_commerce_app_core_flutter_05/assets/115562979/a299aa11-7167-40d7-a67e-27768a4c710b
+
+<br>
 
 ### Images:
 
@@ -185,11 +188,6 @@ Flutter concepts.
  
    <img  src = "https://github.com/SJaynesh/e_commerce_app_core_flutter_05/assets/115562979/8e412d6f-b875-4d60-8e5c-2d468b049748.jpg" width=22% height=35% >
 </p>
-
-
-
-
-
 
 
 
